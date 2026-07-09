@@ -91,7 +91,7 @@ function Login() {
           disabled={loading}
           className="w-full bg-[#91F2E8] py-3 rounded-lg font-semibold hover:opacity-90 transition disabled:opacity-50"
         >
-          {loading ? "Logging In..." : "Login"}
+          {loading ? "Logging In...." : "Login"}
         </button>
 
         <p className="text-center mt-5 text-gray-600">
