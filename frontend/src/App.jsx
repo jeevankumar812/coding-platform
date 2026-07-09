@@ -16,6 +16,12 @@ import AdminProblems from "./pages/admin/problems/Problems";
 import CreateProblem from "./pages/admin/problems/CreateProblem";
 import UpdateProblem from "./pages/admin/problems/UpdateProblem";
 import DeleteProblem from "./pages/admin/problems/DeleteProblem";
+import Users from "./pages/admin/users/Users";
+import Submissions from "./pages/admin/submissions/Submissions";
+import PendingSubmissions from "./pages/admin/submissions/PendingSubmissions";
+import AcceptSubmission from "./pages/admin/submissions/AcceptSubmission";
+import RejectSubmission from "./pages/admin/submissions/RejectSubmission";
+import Redeems from "./pages/admin/redeems/Redeems";
 
 function App() {
   return (
@@ -57,10 +63,29 @@ function App() {
           element={<UpdateProblem />}
         />
 
-<Route
-  path="/admin/problems/delete/:id"
-  element={<DeleteProblem />}
-/>
+        <Route
+          path="/admin/problems/delete/:id"
+          element={<DeleteProblem />}
+        />
+
+        <Route
+          path = "/admin/users"
+          element = {<Users/>}
+          />
+
+          <Route
+            path="/admin/submissions"
+            element={<Submissions />}
+          />
+
+
+          <Route
+          path = "/admin/redeems"
+          element={<Redeems/>}
+          />
+
+
+        
 
         {/* ================= 404 ================= */}
 

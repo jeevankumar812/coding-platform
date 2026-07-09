@@ -2,123 +2,207 @@ import { Link } from "react-router-dom";
 
 function AdminDashboard() {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-slate-100">
 
-      {/* Header */}
-      <div className="bg-white shadow-sm px-10 py-5 flex justify-between items-center">
+      {/* ================= Header ================= */}
 
-        <h1 className="text-3xl font-bold">
-          Admin Dashboard
-        </h1>
+      <header className="bg-white shadow-sm ">
 
-        <Link
-          to="/"
-          className="bg-red-500 text-white px-5 py-2 rounded-lg hover:bg-red-600"
-        >
-          Logout
-        </Link>
+        <div className="w-full px-10 py-6 flex justify-between items-center">
 
-      </div>
+          <div>
 
-      {/* Welcome */}
+            <h1 className="text-4xl font-bold text-gray-800">
+              Admin Dashboard
+            </h1>
 
-      <div className="px-10 mt-8">
+            <p className="text-gray-500 mt-1">
+              Coding Platform Administration Panel
+            </p>
 
-        <h2 className="text-2xl font-semibold">
-          Welcome Admin 👋
+          </div>
+
+          <Link
+            to="/"
+            className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-xl font-semibold transition"
+          >
+            Logout
+          </Link>
+
+        </div>
+
+      </header>
+
+      {/* ================= Welcome ================= */}
+
+      <section className="w-full px-10 mt-10">
+
+        <div className="bg-gradient-to-r from-cyan-500 to-teal-500 rounded-2xl p-8 text-white shadow-lg">
+
+          <h2 className="text-3xl font-bold">
+            Welcome, Admin 👋
+          </h2>
+
+          <p className="mt-3 text-cyan-100 text-lg">
+            Manage users, coding problems, submissions and reward requests
+            from one dashboard.
+          </p>
+
+        </div>
+
+      </section>
+
+      {/* ================= Quick Stats ================= */}
+
+      <section className="w-full px-10 mt-8">
+
+        <div className="grid md:grid-cols-4 gap-6">
+
+          <div className="bg-white rounded-2xl shadow p-6">
+
+            <p className="text-gray-500">
+              Modules
+            </p>
+
+            <h2 className="text-4xl font-bold text-cyan-600 mt-2">
+              4
+            </h2>
+
+          </div>
+
+          <div className="bg-white rounded-2xl shadow p-6">
+
+            <p className="text-gray-500">
+              Platform
+            </p>
+
+            <h2 className="text-2xl font-bold mt-2">
+              MERN Stack
+            </h2>
+
+          </div>
+
+          <div className="bg-white rounded-2xl shadow p-6">
+
+            <p className="text-gray-500">
+              Role
+            </p>
+
+            <h2 className="text-2xl font-bold text-green-600 mt-2">
+              Administrator
+            </h2>
+
+          </div>
+
+          <div className="bg-white rounded-2xl shadow p-6">
+
+            <p className="text-gray-500">
+              Status
+            </p>
+
+            <h2 className="text-2xl font-bold text-green-500 mt-2">
+              ● Online
+            </h2>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* ================= Modules ================= */}
+
+     <section className="w-full px-10 mt-10 pb-10">
+
+        <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          Administration Modules
         </h2>
 
-        <p className="text-gray-600 mt-2">
-          Manage your coding platform from one place.
-        </p>
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
 
-      </div>
+          {/* Problems */}
 
-      {/* Cards */}
+          <Link
+            to="/admin/problems"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8 border-t-4 border-cyan-500"
+          >
+            <div className="text-5xl mb-5">
+                📚
+            </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-10 mt-10">
+            <h3 className="text-2xl font-bold mb-3">
+              Problems
+            </h3>
 
-        {/* Problems */}
+            <p className="text-gray-600">
+              Create, update and delete coding problems.
+            </p>
 
-        <Link
-          to="/admin/problems"
-          className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition"
-        >
-          <h2 className="text-2xl font-bold mb-3">
-            📚 Problems
-          </h2>
+          </Link>
 
-          <p className="text-gray-600">
-            Create, update and delete coding problems.
-          </p>
+          {/* Users */}
 
-        </Link>
+          <Link
+            to="/admin/users"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8 border-t-4 border-blue-500"
+          >
+            <div className="text-5xl mb-5">
+                👥
+            </div>
 
-        {/* Users */}
+            <h3 className="text-2xl font-bold mb-3">
+              Users
+            </h3>
 
-        <Link
-          to="/admin/users"
-          className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition"
-        >
-          <h2 className="text-2xl font-bold mb-3">
-            👥 Users
-          </h2>
+            <p className="text-gray-600">
+              View and manage all registered users.
+            </p>
 
-          <p className="text-gray-600">
-            View all registered users.
-          </p>
+          </Link>
 
-        </Link>
+          {/* Submissions */}
 
-        {/* Pending Submissions */}
+          <Link
+            to="/admin/submissions"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8 border-t-4 border-green-500"
+          >
+            <div className="text-5xl mb-5">
+                💻
+            </div>
 
-        <Link
-          to="/admin/pending-submissions"
-          className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition"
-        >
-          <h2 className="text-2xl font-bold mb-3">
-            💻 Pending Submissions
-          </h2>
+            <h3 className="text-2xl font-bold mb-3">
+              Submissions
+            </h3>
 
-          <p className="text-gray-600">
-            Review and verify submitted solutions.
-          </p>
+            <p className="text-gray-600">
+              Review submitted solutions and approve or reject them.
+            </p>
 
-        </Link>
+          </Link>
 
-        {/* Redeems */}
+          {/* Redeems */}
 
-        <Link
-          to="/admin/redeems"
-          className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition"
-        >
-          <h2 className="text-2xl font-bold mb-3">
-            🎁 Redeem Requests
-          </h2>
+          <Link
+            to="/admin/redeems"
+            className="bg-white rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8 border-t-4 border-yellow-500"
+          >
+            <div className="text-5xl mb-5">
+                🎁
+            </div>
 
-          <p className="text-gray-600">
-            View users' reward redemption requests.
-          </p>
+            <h3 className="text-2xl font-bold mb-3">
+              Redeems
+            </h3>
 
-        </Link>
+            <p className="text-gray-600">
+              Manage reward redemption requests and send gift cards.
+            </p>
 
-        {/* Send Reward */}
+          </Link>
 
-        <Link
-          to="/admin/send-reward"
-          className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition"
-        >
-          <h2 className="text-2xl font-bold mb-3">
-            💳 Send Reward
-          </h2>
+        </div>
 
-          <p className="text-gray-600">
-            Send gift card codes to users.
-          </p>
-
-        </Link>
-
-      </div>
+      </section>
 
     </div>
   );
