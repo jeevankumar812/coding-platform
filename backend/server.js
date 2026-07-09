@@ -18,11 +18,13 @@ app.use(cors());
 
 app.use(
   cors({
-    origin: "http://localhost:5174", // Your React app URL
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+    ],
     credentials: true,
   })
 );
-
 
 app.use('/api/auth',authRoutes);
 app.use('/api/admin',adminRoutes);

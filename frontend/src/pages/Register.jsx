@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 import { registerUser } from "../services/authService";
@@ -50,7 +50,6 @@ function Register() {
       setTimeout(() => {
         navigate("/login");
       }, 1500);
-
     } catch (error) {
       toast.error(
         error.response?.data?.message || "Registration Failed!"
@@ -62,7 +61,6 @@ function Register() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
-
       <form
         onSubmit={handleSubmit}
         className="bg-white w-[420px] p-8 rounded-2xl shadow-xl"
@@ -119,8 +117,16 @@ function Register() {
           {loading ? "Registering..." : "Register"}
         </button>
 
+        <p className="text-center mt-6 text-gray-600">
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="text-[#00A896] font-semibold"
+          >
+            Login
+          </Link>
+        </p>
       </form>
-
     </div>
   );
 }

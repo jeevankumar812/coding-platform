@@ -91,7 +91,7 @@ export const updateProblem = async (req, res) => {
       req.params.id,
       updateData,
       {
-        new: true,
+        returnDocument: "after", // Replaces new: true
         runValidators: true,
       }
     );
@@ -119,7 +119,6 @@ export const updateProblem = async (req, res) => {
     });
   }
 };
-
 
 export const deleteProblem = async(req,res)=>{
     try {

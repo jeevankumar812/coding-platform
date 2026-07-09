@@ -38,8 +38,12 @@ function Login() {
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       setTimeout(() => {
-        navigate("/problems");
-      }, 1000);
+  if (res.data.user.role === "admin") {
+    navigate("/admin/dashboard");
+  } else {
+    navigate("/dashboard");
+  }
+}, 1000);
 
     } catch (error) {
       toast.error(
