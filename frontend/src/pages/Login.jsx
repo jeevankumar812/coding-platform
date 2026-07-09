@@ -54,14 +54,24 @@ function Login() {
     }
   };
 
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+return (
+  <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div className="w-[420px]">
+      
+      {/* Back Button */}
+      <button
+        type="button"
+        onClick={() => navigate("/")}
+        className="flex items-center gap-2 text-[#00A896] hover:text-[#028090] font-semibold mb-4 transition"
+      >
+        ← Back to Home
+      </button>
 
+      {/* Login Form */}
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow-xl w-[420px]"
+        className="bg-white p-8 rounded-2xl shadow-xl"
       >
-
         <h2 className="text-3xl font-bold text-center mb-8">
           Login
         </h2>
@@ -91,23 +101,22 @@ function Login() {
           disabled={loading}
           className="w-full bg-[#91F2E8] py-3 rounded-lg font-semibold hover:opacity-90 transition disabled:opacity-50"
         >
-          {loading ? "Logging In....." : "Login"}
+          {loading ? "Logging In..." : "Login"}
         </button>
 
         <p className="text-center mt-5 text-gray-600">
           Don't have an account?{" "}
           <Link
             to="/register"
-            className="text-[#00A896] font-semibold"
+            className="text-[#00A896] font-semibold hover:underline"
           >
             Register
           </Link>
         </p>
-
       </form>
-
     </div>
-  );
+  </div>
+);
 }
 
 export default Login;

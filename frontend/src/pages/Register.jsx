@@ -59,11 +59,23 @@ function Register() {
     }
   };
 
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+return (
+  <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div className="w-[420px]">
+
+      {/* Back Button */}
+      <button
+        type="button"
+        onClick={() => navigate("/")}
+        className="flex items-center gap-2 text-[#00A896] hover:text-[#028090] font-semibold mb-4 transition"
+      >
+        ← Back to Home
+      </button>
+
+      {/* Register Form */}
       <form
         onSubmit={handleSubmit}
-        className="bg-white w-[420px] p-8 rounded-2xl shadow-xl"
+        className="bg-white p-8 rounded-2xl shadow-xl"
       >
         <h2 className="text-3xl font-bold text-center mb-8">
           Create Account
@@ -121,14 +133,15 @@ function Register() {
           Already have an account?{" "}
           <Link
             to="/login"
-            className="text-[#00A896] font-semibold"
+            className="text-[#00A896] font-semibold hover:underline"
           >
             Login
           </Link>
         </p>
       </form>
     </div>
-  );
+  </div>
+);
 }
 
 export default Register;
